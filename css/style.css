@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'ChickenMcNuggets';
+    src: url('../font/ChickenMcNuggets.ttf');
+}
+
+textarea::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+}
