@@ -1,3 +1,16 @@
+document.onreadystatechange = function () {
+    var state = document.readyState
+    if (state == 'interactive') {
+         document.getElementById('contents').style.visibility="hidden";
+    }
+    else if (state == 'complete') {
+        setTimeout(function(){
+           document.getElementById('load').style.display="none";
+           document.getElementById('contents').style.visibility="visible";
+        },1000);
+    }
+  }
+
 function init() {
     textImage = TextImage();
     form = document.querySelector('form');
@@ -16,8 +29,6 @@ function updateImage() {
         },
         message = textarea.value;
     textImage.setStyle(style);
-    textarea.setAttribute('style',
-        'font: ' + textImage.style.size + 'pt ' + textImage.style.font + ';')
     textImage.toImage(message, function () {
         imageDisplay.innerHTML = this.outerHTML;
         imageDownload.href = this.src;
