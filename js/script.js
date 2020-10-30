@@ -26,6 +26,7 @@ function updateImage() {
     var style = {
             font: 'ChickenMcNuggets',
             size: parseInt(form.querySelector('select[name="font-size"]').value),
+            lineHeight: "1.5em"
         },
         message = textarea.value;
     textImage.setStyle(style);
